@@ -1,10 +1,22 @@
 -- yes ik im leaking source but obfuscation is breaking shit
+
 local ctx = getgenv().FxkeCtx
+print("[PL] step 1 — ctx", ctx)
 local Window = ctx.Window
 local NebulaIcons = ctx.NebulaIcons
-local notify = ctx.notify or function()
-end
+local notify = ctx.notify or function() end
 local Starlight = ctx.Starlight
+print("[PL] step 2 — Window", Window, "NebulaIcons", NebulaIcons)
+
+local PrisonLife = Window:CreateTabSection("Prison Life")
+print("[PL] step 3 — PrisonLife", PrisonLife)
+
+local Main = PrisonLife:CreateTab({
+    Name = "Main",
+    Icon = NebulaIcons:GetIcon('stars', 'Material'),
+    Columns = 2,
+}, "INDEX")
+print("[PL] step 4 — Main", Main)
 local PrisonLife = Window:CreateTabSection("Prison Life")
 local Main = PrisonLife:CreateTab({
 	Name = "Main",
